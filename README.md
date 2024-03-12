@@ -1,8 +1,15 @@
 # validREF
 A platform that validates all references made in research paper
 
-## Intsall dependencies
-pip install requirements.txt
+*** currently made to extract citation contents***
 
-## Serve
-streamlit run app.py
+## Intsall dependencies
+
+```bash
+pip install requirements.txt
+```
+## Usage
+
+```bash
+python3 gemini+lang.py
+```

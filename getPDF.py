@@ -1,12 +1,9 @@
-from PyPDF2 import PdfReader
+from langchain_community.document_loaders import PyPDFLoader
 
+def get_pdf(pdf_doc):
 
-def get_pdf_text(pdf_docs):
-    text = ""
+    pdf_loader = PyPDFLoader(pdf_doc)
+    pages = pdf_loader.load_and_split()
 
-    for pdf in pdf_docs:
-        pdf_reader = PdfReader(pdf)
-        for page in pdf_reader.pages:
-            text += page.extract_text()
-    return text
+    return pages
     

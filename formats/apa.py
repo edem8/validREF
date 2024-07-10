@@ -8,6 +8,7 @@ def extract_apa_citations(pdf_path):
     content = extract_text(pdf_path)
     
     # Regular expression to match APA citations
+    # RegEx currently matches parenthetic formats only
     apa_pattern = (
         r"\([A-Za-z &.,]+(?: et al\.)?, \d{4}(?:; [A-Za-z &.,]+(?: et al\.)?, \d{4})*\)"
     )

@@ -18,11 +18,13 @@ def ai(citations):
         max_tokens=200,
     )
 
+
+    
     apa_style = """
             APA Parenthetic format: /
-            1. (Mintah, 2020) /
-            2. (Obeng & Anthony, 2013) /
-            3. (Appah et al., 2016) /
+            1. (Mintah, 2020) or (Mintah, 2015, p. 2) for one author/
+            2. (Obeng & Anthony, 2013) or (Obeng & Anthony, 2010, pp. 112-113). for two authors/
+            3. (Appah et al., 2016) or (Appah et al., 2001, para. 5). for three+ authors/
 
             APA Narrative format: /
             1. Allan, (2020) /
@@ -33,7 +35,10 @@ def ai(citations):
             1. (Evans & McLeod, 2017; Gallant, 2014; Ryan et al., 2019) /
 
             APA multiple citings(can be any order for Narrative format): /
-            1. McConomy (2015), Ternes (2010), and Guenther (2018)
+            1. McConomy (2015), Ternes (2010), and Guenther (2018)  /
+
+            APA missing information (Parenthetic format): /
+            1. (Smith, n.d.)
             
             """
 

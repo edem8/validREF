@@ -20,7 +20,9 @@ Upload returns a JSON object containing a  extracted, valid and invalid citation
 pip install requirements.txt
 ```
 ## Usage
-
+- Create .env file
+- Add your openAI access token
+- Run
 ```bash
 python3 app.py
 ```

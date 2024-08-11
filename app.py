@@ -46,9 +46,9 @@ def upload_file():
                 "citations": citations,
                 "Total": len(citations),
                 "valid": valid,
-                "valid count": len(valid),
+                "validCount": len(valid),
                 "invalid": invalid,
-                "invlaid count": len(invalid),
+                "invlaidCount": len(invalid),
             }
         ),
         200,

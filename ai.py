@@ -18,12 +18,12 @@ def ai(citations):
         max_tokens=200,
     )
 
-
-    
     apa_style = """
             APA Parenthetic format: /
             1. (Mintah, 2020) or (Mintah, 2015, p. 2) for one author/
             2. (Obeng & Anthony, 2013) or (Obeng & Anthony, 2010, pp. 112-113). for two authors/
+            Note: Use of "and" instead of "&" in paranthetic in invalid/
+
             3. (Appah et al., 2016) or (Appah et al., 2001, para. 5). for three+ authors/
 
             APA Narrative format: /
@@ -64,4 +64,30 @@ def ai(citations):
         else:
             unmatches.append(citation)
 
-    return matches, unmatches
+    corrected = []
+    if len(unmatches) > 0:
+        corrected = correct(unmatches, llm, apa_style)
+
+    return matches, unmatches, corrected
+
+
+def correct(unmatches, llm, apa_style):
+
+    prompt = ChatPromptTemplate.from_messages(
+        [
+            (
+                "system",
+                f"correct the following citation according to APA 7th edition in-text citation style. Refer to {apa_style}",
+            ),
+            ("user", "{input}"),
+        ]
+    )
+
+    chain = prompt | llm | StrOutputParser()
+
+    corrected = []
+    for citation in unmatches:
+        corrected_citation = chain.invoke({"input": citation})
+        corrected.append(corrected_citation)
+
+    return corrected

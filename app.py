@@ -32,7 +32,7 @@ def upload_file():
     if style == "APA 7th edition":
 
         citations = extract_apa_citations(save_path)
-        valid, invalid = ai(citations)
+        valid, invalid, corrected = ai(citations)
 
     elif style == "MLA edition":
         pass
@@ -49,6 +49,7 @@ def upload_file():
                 "validCount": len(valid),
                 "invalid": invalid,
                 "invlaidCount": len(invalid),
+                "corrected": corrected,
             }
         ),
         200,

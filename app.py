@@ -48,7 +48,7 @@ def upload_file():
                 "valid": valid,
                 "validCount": len(valid),
                 "invalid": invalid,
-                "invlaidCount": len(invalid),
+                "invalidCount": len(invalid),
                 "corrected": corrected,
             }
         ),

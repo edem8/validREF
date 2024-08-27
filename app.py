@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request, redirect, url_for
 
 from flask_cors import CORS
 from formats.apa import extract_apa_citations
+from formats.mla import extract_mla_citations
 from ai import ai
 
 
@@ -32,10 +33,13 @@ def upload_file():
     if style == "APA 7th edition":
 
         citations = extract_apa_citations(save_path)
-        valid, invalid, corrected = ai(citations)
+        
 
-    elif style == "MLA edition":
-        pass
+    elif style == "MLA 9th edition":
+        citations = extract_mla_citations(save_path)
+
+    valid, invalid, corrected = ai(citations, style)
+
 
     """return a 200 response"""
     response = (

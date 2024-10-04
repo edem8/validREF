@@ -1,5 +1,6 @@
 # validREF
 A microservice that validates all APA 7th edition citings in a research paper or article
+Example usage: [citeScout](https://github.com/edem8/citeScout)
 
 ## Screenshots
 /

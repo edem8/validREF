@@ -105,7 +105,7 @@ style_guides = {
         Example: Jones (2015), Smith (2014) /
         Example: Beckworth (2016) and "Nursing" (2015)
 
-    """
+    """,
 }
 
 
